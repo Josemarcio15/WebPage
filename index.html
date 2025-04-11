@@ -1,41 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="./">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="curso_udemy">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <title>curso_udemy</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Academia Fitness</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <h1>Metamorfose</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <div class="content">
+            <h2>Bem-vindo à Academia Metamorfose</h2>
+            <p>Fique de olho nas redes sociais, em breve estaremos com mais noticias</p>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos">
+        <div class="content">
+            <h2>Nossos Serviços</h2>
+            <ul>
+                <li>
+                    <h3>Treinamento Personalizado</h3>
+                </li>
+                <li>
+                    <h3>Musculação</h3>
+                </li>
+                <li>
+                    <h3>Aulas de Zumba</h3>
+                </li>
+                <li>
+                    <h3>e muito mais</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato">
+        <div class="content">
+            <!-- <h2>Contato</h2>
+            <p>Email: metamorfose-academia@live.com</p> -->
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Metamorfose. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
