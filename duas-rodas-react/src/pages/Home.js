@@ -1,41 +1,44 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import banner1 from '../assets/banner1.jpeg';
 import banner2 from '../assets/banner2.jpeg';
 import banner3 from '../assets/banner3.jpeg';
 import banner4 from '../assets/banner4.jpeg';
-import banner5 from '../assets/banner5.jpeg';
-import banner6 from '../assets/banner6.jpeg';
-import banner7 from '../assets/banner7.jpeg';
 import TopBar from '../components/TopBar.js';
 
 function Home() {
-    const imagens = [banner1, banner2, banner3, banner4, banner5, banner6, banner7];
-    const carrosselRef = useRef(null);
-    let index = 0;
+    const imagens = [banner1, banner2, banner3, banner4];
 
-    useEffect(() => {
-        const intervalo = setInterval(() => {
-            if (carrosselRef.current) {
-                index = (index + 1) % imagens.length;
-                const larguraImagem = carrosselRef.current.firstChild.offsetWidth + 10; // largura + margin
-                carrosselRef.current.scrollTo({
-                    left: index * larguraImagem,
-                    behavior: 'smooth',
-                });
-            }
-        }, 3000);
+    const settings = {
+        dots: true,           // mostra os pontinhos de navegação
+        infinite: true,       // carrossel infinito
+        speed: 500,           // velocidade da transição (ms)
+        slidesToShow: 1,      // mostra 1 imagem por vez
+        slidesToScroll: 1,    // rola 1 slide por vez
+        autoplay: true,       // rolar automaticamente
+        autoplaySpeed: 3000,  // tempo entre slides
 
-        return () => clearInterval(intervalo);
-    }, [imagens.length]);
+    };
 
     return (
         <div>
             <TopBar />
 
-            <div className="carrossel" ref={carrosselRef}>
-                {imagens.map((img, i) => (
-                    <img key={i} src={img} alt={`Banner ${i + 1}`} />
-                ))}
+            <div style={{ marginTop: '70px' }}> {/* para não ficar embaixo da topbar */}
+                <Slider {...settings}>
+                    {imagens.map((img, i) => (
+                        <div key={i}>
+                            <img
+                                src={img}
+                                alt={`Banner ${i + 1}`}
+                                style={{ width: "100%", height: "auto", borderRadius: "10px" }}
+                            />
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </div>
     );

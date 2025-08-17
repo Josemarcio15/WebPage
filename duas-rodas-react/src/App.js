@@ -1,4 +1,3 @@
-import React from 'react';
 import Home from './pages/Home';  // ajuste o caminho se estiver diferente
 import './App.css';
 

@@ -1,0 +1,16 @@
+.topbar-btn {
+    min-width: 120px;
+    /* todos terão o mesmo tamanho mínimo */
+    text-align: center;
+    /* centraliza o texto */
+    /* border-radius: 30px; */
+    /* cantos arredondados */
+    transition: all 0.3s;
+    /* efeito suave ao passar o mouse */
+}
+
+.topbar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* leve highlight */
+    color: white;
+}
