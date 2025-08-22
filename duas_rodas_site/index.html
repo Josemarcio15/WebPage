@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Sidebar</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div id="main">
+        <div class="topbar">
+            <span id="menu-btn">&#9776;</span> <!-- ícone hambúrguer -->
+            <h1>Oficina Duas Rodas</h1>
+        </div>
+        <div class="content">
+            <div class="banner-slider">
+                <div class="slides">
+                    <div class="slide"><img src="images/banner1.jpeg" alt="Banner 1"></div>
+                    <div class="slide"><img src="images/banner2.jpeg" alt="Banner 2"></div>
+                    <div class="slide"><img src="images/banner3.jpeg" alt="Banner 3"></div>
+                    <div class="slide"><img src="images/banner4.jpeg" alt="Banner 3"></div>
+                    <div class="slide"><img src="images/banner5.jpeg" alt="Banner 3"></div>
+                    <div class="slide"><img src="images/banner6.jpeg" alt="Banner 3"></div>
+                    <div class="slide"><img src="images/banner7.jpeg" alt="Banner 3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Banner Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slidesContainer = document.querySelector('.slides');
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        setInterval(nextSlide, 3000); // troca de slide a cada 3 segundos
+    </script>
+</body>
+
+</html>
