@@ -1,3 +1,0 @@
-## TODO:
-
-- Testar refatoração;
